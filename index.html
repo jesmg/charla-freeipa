@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introducción a FreeIPA</title>
+		<meta name="author" content="Jesús Marín García">
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-markdown>
+					## Introducción a FreeIPA
+					![IPA](./img/cerveza.jpg "Cerveza IPA")  
+					######[Foto de Wikimedia](https://commons.wikimedia.org/wiki/File:Lithuanian-beer.jpg)
+				</section>
+
+				<section data-markdown>
+					## No hay cerveza gratis 🙁
+					#### \#YoMeQuedoEnCasa
+				</section>
+				
+				<section data-markdown>
+					### FREEIPA es un IdM:
+					* Identidad
+					* Autenticación
+					* Control de acceso
+					* ¡Opensource!
+					* ¡Aplicaciones estándar!
+				</section>
+
+				<section data-markdown>
+					## ¿LDAP?
+				</section>
+
+				<section data-markdown>
+					### Software:
+					* 389ds LDAP server
+					* MIT Krb5 KDC
+					* NTPD server
+					* BIND9 DNS
+					* Dogtag Certificate System
+					* Web UI + API
+				</section>
+
+				<section data-markdown>
+					* Cluster
+					* Integrable con AD
+					* Automatizable
+					* [Keycloack](https://www.keycloak.org/)
+				</section>
+
+				<section data-markdown>
+					## ¡Hora de la demo!
+					### Usuarios, grupos...
+				</section>
+
+				<section data-markdown>
+					## Laboratorio:
+					[https://github.com/jesmg/freeipa-lab](https://github.com/jesmg/freeipa-lab)
+				</section>
+
+				<section data-markdown>
+					### Cliente Linux (ipa-client):
+					* SSSD
+					* MIT Krb5
+					* Certmonger
+				</section>
+
+				<section data-markdown>
+					## Cliente Linux:
+					* PAM -> Autenticación flexible (login, sudo)
+					* NSS -> BBDD usuarios (/etc/passwd, /etc/group)
+					* SSSD -> Acceso a directorios remotos (LDAP, Kerberos)
+				</section>
+
+				<section data-markdown>
+					![SSSD](./img/sssd.png "Arquitectura SSSD")
+
+					[Fedoraproject](https://docs.fedoraproject.org/en-US/Fedora/15/html/FreeIPA_Guide/Migrating_from_a_Directory_Server_to_IPA.html)
+				</section>
+
+				<section data-markdown>
+					## ¡Hora de la demo!
+					### Host enrollment
+				</section>
+
+				<!-- Fin -->
+				<section data-markdown>
+					#### Jesús Marín
+
+					Telegram: [@jesmg](https://t.me/jesmg)   
+					Email: [contacto@jesusmg.org](mailto://contacto@jesusmg.org)   
+					Twitter: [@_jesusmg](http://twitter.com/_jesusmg)  
+					Radio: EA7KGH
+				</section>		
+
+			</div>
+		</div>
+
+		<!-- Initialize Reveal -->
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				keyboard: true,
+				overview: true,
+				showNotes: false,
+				history: true,
+				center: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				]
+			});
+		</script>
+
+		<!-- Configure presenter keys -->
+		<script>
+			Reveal.configure({
+  				keyboard: {
+    				38: 'next',
+    				40: 'prev'
+  				}
+			});	
+	    </script>
+	</body>
+
+</html>
